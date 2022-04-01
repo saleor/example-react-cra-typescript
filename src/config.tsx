@@ -2,7 +2,7 @@ import { gql } from '@apollo/client';
 
 export const GET_LATEST_PRODUCTS = gql`
   query getLatestProducts($keyword: String) {
-    products(first: 5, filter: { search: $keyword }) {
+    products(first: 5, filter: { search: $keyword }, channel: "default-channel") {
       edges {
         node {
           id
